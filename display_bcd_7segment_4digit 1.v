@@ -1,39 +1,18 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 02/23/2023 04:36:33 PM
-// Design Name: 
-// Module Name: display_bcd_7segment_4digit
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module display_bcd_7segment_4digit( 
      bcd,
      seg, digit_sel, DP, clk  );
      
   
-  //Declare inputs,outputs and internal variables.
+  
      input clk;
    
-     wire [1:0]dp_sel;  // Select lines for Display   
-     input [15:0] bcd;    //Inputs from switches 13 to 0 
-     output [6:0] seg;   // Seven Segment display pins 
+     wire [1:0]dp_sel;    
+     input [15:0] bcd;    
+     output [6:0] seg;    
        
     output [3:0]digit_sel;   // Selecting one of the four seven segment dislays 
-    output DP;               // point LED; Enable for fractions numbers display 
+    output DP;               
     
    wire [6:0]seg1, seg2, seg3, seg4;
     
