@@ -2,11 +2,7 @@
 module display_bcd_7segment_4digit( 
      bcd,
      seg, digit_sel, DP, clk  );
-     
-  
-  
      input clk;
-   
      wire [1:0]dp_sel;    
      input [15:0] bcd;    
      output [6:0] seg;    
@@ -24,7 +20,6 @@ module display_bcd_7segment_4digit(
   counterDP uut (.clk(clk),.counter(dp_sel));
   assign digit_sel = dp_sel[1]?(dp_sel[0]?4'b1000:4'b0100):(dp_sel[0]?4'b0010:4'b0001);  
   assign seg = dp_sel[1]?(dp_sel[0]?seg4:seg3):(dp_sel[0]?seg2:seg1);
-  //assign DP = 1'b0;
   assign DP= dp_sel[1]?(dp_sel[0]?1'b1:1'b0):(dp_sel[0]?1'b1:1'b1);
   
 endmodule
