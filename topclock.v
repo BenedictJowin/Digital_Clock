@@ -1,23 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 10/26/2023 11:27:52 PM
-// Design Name: 
-// Module Name: Top
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 module Top(
 input clk,
 input rst,
@@ -34,7 +15,6 @@ output [6:0]seg
     wire [13:0] sec_b, min_b;
     
     time_gen uut1 (.clk(clk), .rst(rst), .second(sec), .minute(min),.hour(hour));
-    //CountOnes uut4(bin_num,bin);
     assign sec_b = {{7{1'b0}}, sec};
     assign min_b = {{7{1'b0}}, min};
     bin2bcd uut2 (.bin(min_b),.bcd(bcd1));
